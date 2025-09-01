@@ -1750,26 +1750,29 @@ About Area End
 /*==================================
 Security Area Area 
 =================================*/
-        .cyber-services {
+       .cyber-services {
             padding: 80px 0;
             width: 100%;
             max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
         }
         
         .cyber-container {
             width: 100%;
             padding: 0 15px;
             margin: 0 auto;
-            margin-left: 90px;
         }
         
         .cyber-title {
             text-align: center;
             margin-bottom: 60px;
+            padding: 0 15px;
         }
         
         .cyber-subtitle {
-            color: #000;
+            color: #0071dc;
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 2px;
@@ -1803,13 +1806,13 @@ Security Area Area
         
         .cyber-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
         
         .cyber-card {
-            background:#f6fbff;
+            background: #f6fbff;
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -1849,7 +1852,7 @@ Security Area Area
         .cyber-icon {
             width: 80px;
             height: 80px;
-            background:#0071dc;
+            background: #0071dc;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -1862,14 +1865,13 @@ Security Area Area
         
         .cyber-card:hover .cyber-icon {
             transform: rotate(10deg) scale(1.1);
-            background: #0071dc;
-            color:#fff;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            color: #fff;
         }
         
         .cyber-card h3 {
             margin-bottom: 15px;
             font-size: 24px;
-
         }
         
         .cyber-card h3 a {
@@ -1885,17 +1887,19 @@ Security Area Area
         
         .cyber-card p {
             margin-bottom: 0;
-            color: #94a3b8;
+            color: #64748b;
             line-height: 1.6;
             transition: all 0.3s ease;
+            flex-grow: 1;
         }
         
         .cyber-card:hover p {
-            color: #cbd5e1;
+            color: #475569;
         }
         
         .cyber-card .cyber-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-top: 20px;
             color: #38bdf8;
             text-decoration: none;
@@ -1915,8 +1919,9 @@ Security Area Area
         }
         
         .cyber-card .cyber-link i {
-            margin-left: 5px;
+            margin-left: 8px;
             transition: transform 0.3s ease;
+            font-size: 14px;
         }
         
         .cyber-card .cyber-link:hover i {
@@ -1960,22 +1965,134 @@ Security Area Area
         }
         
         /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .cyber-grid {
-                grid-template-columns: repeat(2, 1fr);
+        /* Large devices (desktops, 992px and up) */
+        @media (max-width: 1200px) {
+            .cyber-services {
+                padding: 70px 20px;
+                max-width: 100%;
+            }
+            
+            .cyber-container {
+                margin-left: 0;
             }
         }
         
+        /* Medium devices (tablets, 768px to 991px) */
+        @media (max-width: 992px) {
+            .cyber-services {
+                padding: 60px 20px;
+            }
+            
+            .cyber-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .cyber-title h2 {
+                font-size: 36px;
+            }
+            
+            .cyber-bg-1,
+            .cyber-bg-2 {
+                display: none;
+            }
+        }
+        
+        /* Small devices (landscape phones, 576px to 767px) */
         @media (max-width: 768px) {
+            .cyber-services {
+                padding: 50px 15px;
+            }
+            
             .cyber-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .cyber-title {
+                margin-bottom: 40px;
             }
             
             .cyber-title h2 {
                 font-size: 32px;
             }
+            
+            .cyber-subtitle {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+            
+            .cyber-card {
+                padding: 25px;
+            }
+            
+            .cyber-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 26px;
+            }
+            
+            .cyber-card h3 {
+                font-size: 22px;
+            }
         }
-
+        
+        /* Extra small devices (portrait phones, less than 576px) */
+        @media (max-width: 576px) {
+            .cyber-services {
+                padding: 40px 10px;
+            }
+            
+            .cyber-title h2 {
+                font-size: 28px;
+            }
+            
+            .cyber-subtitle {
+                font-size: 14px;
+            }
+            
+            .cyber-card {
+                padding: 20px;
+            }
+            
+            .cyber-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            
+            .cyber-card h3 {
+                font-size: 20px;
+            }
+            
+            .cyber-card p {
+                font-size: 15px;
+            }
+        }
+        
+        /* Very small devices (less than 400px) */
+        @media (max-width: 400px) {
+            .cyber-title h2 {
+                font-size: 24px;
+            }
+            
+            .cyber-title h2:after {
+                width: 60px;
+                height: 3px;
+                bottom: -8px;
+            }
+            
+            .cyber-card {
+                padding: 18px;
+            }
+            
+            .cyber-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 20px;
+            }
+        }
 /*==================================
 Security Area End
 =================================*/
@@ -1986,18 +2103,19 @@ Services Area
             padding: 80px 0;
             width: 100%;
             max-width: 1200px;
+            margin: 0 auto;
         }
         
         .modern-container {
             width: 100%;
             padding: 0 15px;
             margin: 0 auto;
-            margin-left: 80px;
         }
         
         .modern-title {
             text-align: center;
             margin-bottom: 60px;
+            padding: 0 15px;
         }
         
         .modern-subtitle {
@@ -2032,7 +2150,7 @@ Services Area
         
         .modern-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -2057,7 +2175,7 @@ Services Area
             left: 0;
             width: 100%;
             height: 0;
-            background:#2196f3;
+            background: #2196f3;
             opacity: 0;
             transition: all 0.5s ease;
             z-index: -1;
@@ -2126,7 +2244,7 @@ Services Area
             right: 25px;
             width: 80px;
             height: 80px;
-            background:#2196f3;
+            background: #2196f3;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -2218,25 +2336,168 @@ Services Area
         }
         
         /* Responsive adjustments */
+        /* Large devices (desktops, 992px and up) */
+        @media (max-width: 1200px) {
+            .services-modern {
+                padding: 70px 20px;
+                max-width: 100%;
+            }
+            
+            .modern-container {
+                margin-left: 0;
+            }
+        }
+        
+        /* Medium devices (tablets, 768px to 991px) */
         @media (max-width: 992px) {
+            .services-modern {
+                padding: 60px 20px;
+            }
+            
             .modern-row {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
             }
             
             .modern-title h2 {
                 font-size: 36px;
             }
+            
+            .modern-service-img {
+                height: 200px;
+            }
         }
         
+        /* Small devices (landscape phones, 576px to 767px) */
         @media (max-width: 768px) {
+            .services-modern {
+                padding: 50px 15px;
+            }
+            
             .modern-row {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .modern-title {
+                margin-bottom: 40px;
             }
             
             .modern-title h2 {
                 font-size: 32px;
             }
+            
+            .modern-subtitle {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+            
+            .modern-service-img {
+                height: 220px;
+            }
+            
+            .modern-content {
+                padding: 20px;
+            }
+            
+            .modern-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 26px;
+                right: 20px;
+                top: -35px;
+            }
+            
+            .modern-service-title {
+                font-size: 22px;
+            }
         }
+        
+        /* Extra small devices (portrait phones, less than 576px) */
+        @media (max-width: 576px) {
+            .services-modern {
+                padding: 40px 10px;
+            }
+            
+            .modern-title h2 {
+                font-size: 28px;
+            }
+            
+            .modern-subtitle {
+                font-size: 14px;
+            }
+            
+            .modern-service-img {
+                height: 180px;
+            }
+            
+            .modern-content {
+                padding: 18px;
+            }
+            
+            .modern-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+                right: 18px;
+                top: -30px;
+            }
+            
+            .modern-service-title {
+                font-size: 20px;
+            }
+            
+            .modern-description {
+                font-size: 15px;
+            }
+            
+            .modern-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Very small devices (less than 400px) */
+        @media (max-width: 400px) {
+            .modern-title h2 {
+                font-size: 24px;
+            }
+            
+            .modern-title h2:after {
+                width: 60px;
+                height: 3px;
+                bottom: -8px;
+            }
+            
+            .modern-service-img {
+                height: 160px;
+            }
+            
+            .modern-content {
+                padding: 15px;
+            }
+            
+            .modern-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 20px;
+                right: 15px;
+                top: -27px;
+            }
+            
+            .modern-category a {
+                font-size: 14px;
+            }
+            
+            .modern-service-title {
+                font-size: 18px;
+            }
+            
+            .modern-description {
+                font-size: 14px;
+            }
+        }
+
 /*==================================
 Services Area End
 =================================*/
